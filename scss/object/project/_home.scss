@@ -1,0 +1,33 @@
+@use '../../foundation/setting' as s;
+
+.p-home {
+	&-section {
+		height: 1200px;
+	}
+
+	&-hero {
+		background-color: gold;
+	}
+
+	&-1 {
+		background-color: saddlebrown;
+	}
+
+	&-2 {
+		background-color: blueviolet;
+	}
+
+	&-3 {
+		background-color: palegoldenrod;
+	}
+
+	&-4 {
+		background-color: darkcyan;
+	}
+
+	&-5 {
+		background-color: rebeccapurple;
+	}
+
+
+}

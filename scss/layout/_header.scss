@@ -1,0 +1,45 @@
+@use '../foundation/setting' as s;
+
+.l-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+
+	width: 100vw;
+	height: 80px;
+
+	transition: all .5s ease-out;
+
+	background-color: #fff;
+
+	.sp & {
+		background-color: #fff;
+	}
+
+	&__inner {
+		align-items: center;
+		height: 100%;
+	}
+
+	h1 {
+		max-width: 140px;
+	}
+
+	&__logo-link {
+		display: block;
+	}
+
+	&__nav {}
+
+	&__nav-menu {
+		li {
+			a {}
+		}
+	}
+
+	&__contact-wrap {}
+
+	&__sns-wrap {}
+}

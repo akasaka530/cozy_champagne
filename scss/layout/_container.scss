@@ -1,0 +1,15 @@
+@use '../foundation/setting' as s;
+
+.l-container {
+	margin: 0 auto;
+
+	max-width: 86%;
+
+	@include s.md {
+		max-width: 90%;
+	}
+
+	@include s.xl {
+		max-width: 1200px;
+	}
+}
