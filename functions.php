@@ -3,21 +3,15 @@
 /*----------------------------------------------------------*/
 /* scriptとcssを読み込み */
 /*----------------------------------------------------------*/
-
 function add_link_files()
 {
 
-	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.7.1.min.js', false, true);
-	wp_enqueue_script('bootstrap-script', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', false, true);
-	wp_enqueue_script('gsap-script', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', false, true);
-	wp_enqueue_script('gsap-scroll-trigger-script', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', false, true);
-	wp_enqueue_script('slick-script', get_template_directory_uri() . '/plugins/slick/slick-1.8.1/slick.min.js', false, true);
-	wp_enqueue_script('my-script', get_template_directory_uri() . '/my.js', array('jquery', 'bootstrap-script'), date('YmdGis', filemtime(get_theme_file_path() . '/my.js')));
+	wp_enqueue_script('jquery', get_template_directory_uri() . '/plugins/jquery/3.5.1/jquery.js', false, true);
+	wp_enqueue_script('bootstrap-script', get_template_directory_uri() .'/plugins/bootstrap/4.6.2/bootstrap.bundle.min.js', false, true);
+	wp_enqueue_script('my-script', get_template_directory_uri() . '/main.js', array('jquery', 'bootstrap-script'), date('YmdGis', filemtime(get_theme_file_path() . '/main.js')));
 
-	wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
-	wp_enqueue_style('slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css');
-	wp_enqueue_style('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css');
-	wp_enqueue_style('my-css', get_theme_file_uri('/css/common.css'), array('bootstrap'), date('YmdGis', filemtime(get_theme_file_path() . '/css/common.css')));
+	wp_enqueue_style('bootstrap',  get_theme_file_uri('plugins/bootstrap/4.6.2/bootstrap.min.css'));
+	wp_enqueue_style('my-css', get_theme_file_uri('css/style.css'), array('bootstrap'), date('YmdGis', filemtime(get_theme_file_path() . 'style.css')));
 }
 
 add_action('wp_enqueue_scripts', 'add_link_files');
@@ -47,7 +41,7 @@ function add_block_editor_styles()
 	add_theme_support('editor-styles');
 
 	//add_editor_style() で読み込むスタイルシートを指定
-	add_editor_style('/css/common.css');
+	add_editor_style('/css/style.css');
 }
 
 add_action('after_setup_theme', 'add_block_editor_styles');
